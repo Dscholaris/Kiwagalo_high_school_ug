@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>https://www.kiwagalo_high_school_ug.ac.ug</title>
+  <style>
+  body{
+    padding:5px;
+    margin:5px;
+    font-family: Arial, Times New Roman;
+    background-image:url("imx/pp3.jpg");
+    color:#0b75e5;
+  }
+  header{
+    padding:5px;
+    margin:5px;
+    background-color:#ffffff;
+    box-shadow: 5px 5px 10px #000000;
+    border-radius:7px;
+    text-align:center;
+    border: 1px solid #cecece ;
+    color:#0b75e5;
+  }
+  img{
+    width:20%;
+    height:20%;
+  }
+  .motto{
+    color:#bf0707;
+    font-family: cursive;
+  }
+ 
+ .banner{
+    padding:5px;
+    margin:5px;
+    background-color: #0b75e5dc;
+    color:#ffffff;
+    border-radius:7px;
+  }
+  input{
+    padding:3px;
+    margin:3px;
+    width:40%;
+    text-align: center;
+    border-radius:10px;
+  }
+  
+footer{
+    padding: 5px;
+    margin:10px;
+    margin-top:10%;
+    box-shadow: 3px 3px 10px #000000 ;
+    border-radius:7px;
+    text-align: center;
+    border: 1px solid #faf565 ;
+    background-color:#0b75e5;
+    color:#ffffff;
+  }
+  .gov{
+    margin:5px;
+    padding:5px;
+    background-color:#faf565;
+    border-radius:10px;
+    color: initial; /* Fixes text contrast inside dark footer */
+  }
+  .form-container {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f6;
+    margin:10px;
+    padding:10px;
+    margin-top:10%;
+  }
+  .form-container {
+    max-width:auto;
+    background: #ffffff;
+    margin:10px;
+    margin-top:10%;
+    padding: 10px;
+    border-radius:7px;
+    box-shadow: 3px 3px 10px #000000;
+    border:1px solid #cecece ;
+    float:center;
+    text-align: center;
+  }
+  h2 {
+    text-align:center;
+    margin-bottom:10px;
+  }
+  fieldset {
+    border: 1px solid #cecece;
+    border-radius:7px;
+    padding: 10px;
+    margin-bottom:10px;
+  }
+  legend {
+    font-weight: bold;
+    color: #0b75e5dc;
+    padding:10px;
+  }
+  .form-group {
+    margin-bottom:5px;
+  }
+  label {
+    display: block;
+    margin-bottom:5px;
+    font-weight: bold;
+    color: #555;
+  }
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  select {
+    width:60%;
+    padding: 10px;
+    border: 1px solid #cecece;
+    border-radius:10px;
+    box-sizing: border-box;
+    text-align:center;
+    float:center;
+  }
+  input[type="text"]:focus,
+  input[type="email"]:focus,
+  input[type="tel"]:focus,
+  input[type="date"]:focus,
+  select:focus {
+    border-color:#cecece;
+    outline: none;
+  }
+  .submit-btn {
+    display: block;
+    width:20%;
+    padding:15px;
+    background-color: #0752a1;
+    color: white;
+    border: none;
+    border-radius:7px;
+    font-size:13px;
+    cursor: pointer;
+    font-weight:bold;
+    float:center;
+    margin:15px;
+    position: relative;
+  }
+  .submit-btn:hover {
+    background-color: #4bbef8;
+  }
+  </style>
+</head>
+
+<body>
+  <header>
+    <img src="imgs/logo_1.jpg" alt="Kiwagalo High School Logo">
+    <h1>KIWAGALO HIGH SCHOOL</h1>
+    <h3 class="motto">We Sharpen for the Future</h3>
+    <p><hr/><span id="current-date"></span></p>
+
+    <script>
+      // Automatically populates the header date
+      const today = new Date();
+      document.getElementById('current-date').textContent = today.toDateString();
+    </script>
+  </header> 
+
+  <div>
+      
+    <div class="form-container">
+    <h3>Welcome</h3>
+        <section class="banner">
+      <h2>Information Registration Form</h2>
+      
+      </section>
+      <hr/>
+      <form id="registration-form" action="" method="POST">
+        <fieldset>
+          <legend>Student Information</legend>
+          <div class="form-group">
+            <label for="student-name">Full Name:</label>
+            <input type="text" id="student-name" name="student_name" required placeholder="Insert name">
+          </div>
+          
+          <div class="form-group">
+            <label for="student-dob">Date of Birth:</label>
+            <input type="date" id="student-dob" name="student_dob" required>
+          </div>
+          
+          <div class="form-group">
+            <label for="student-grade"> Class:</label>
+            <select id="student-grade" name="student_grade" required>
+              <option value="" disabled selected>Select Class</option>
+              <option value="S.1"> Senior One</option>
+              <option value="S.2"> Senior Two</option>
+              <option value="S.3"> Senior Three</option>
+              <option value="S.4"> Senior Four</option>
+              <option value="S.5"> Senior Five</option>
+              <option value="S.6"> Senior Six</option>
+            </select>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Parent / Guardian Information</legend>
+          
+          <div class="form-group">
+            <label for="parent-name">Full Name:</label>
+            <input type="text" id="parent-name" name="parent_name" required placeholder="Insert name">
+          </div>
+          
+          <div class="form-group">
+            <label for="parent-relationship">Relationship to Student:</label>
+            <select id="parent-relationship" name="parent_relationship" required>
+              <option value="" disabled selected>Select Relationship</option>
+              <option value="mother">Mother</option>
+              <option value="father">Father</option>
+              <option value="guardian">Guardian</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          
+          <div class="form-group">
+            <label for="parent-phone">Phone Number:</label>
+            <input type="tel" id="parent-phone" name="parent_phone" required placeholder="phone number">
+          </div>
+          <div class="form-group">
+            <label for="parent-email">Email Address:</label>
+            <input type="email" id="parent-email" name="parent_email" required placeholder="contact@example.com">
+          <br/>
+        <input type="submit" class="submit-btn" value="Submit">
+          </div>
+        </fieldset>
+       
+      </form>
+    </div>
+  </div>
+
+  <footer>
+    <address style="font-style: normal;">
+      <p>
+        <b>Email</b>: kiwagalo_high_school_ug@gmail.com;
+        <b>Location:</b> Sironko, Uganda
+        <br/>
+        P.O. Box: 340; 
+        <br/>
+        Nampanga, Kiwagalo Village; 
+        <br/>
+      </p>
+    </address>
+
+    <form id="newsletter-form">
+      <fieldset>
+        <p>Please subscribe to our newsletter</p>
+        <input type="email" id="newsletter-email" placeholder="type your email here" style="text-align:center;" required="required">
+        <br/>
+        <input type="submit" class="submit-btn" value="Submit">
+      </fieldset>
+    </form>
+
+    <div class="gov">
+      <h2 style="color: #1a5276;">Government Policy</h2>
+      <blockquote style="font-style: italic; border-left: 4px solid #1a5276; padding-left: 15px; margin: 0; color: #555; text-align: left;">
+        Official directives, standards, and educational guidelines provided by the <strong><a href="https://www.education.go.ug/secondary-education/" target="_blank">Ministry of Education &amp; Sports</a></strong>. 
+        <p>Kiwagalo High School ensures all student registrations adhere strictly to national policy rules.</p>
+      </blockquote>
+    </div>
+  </footer>
+
+  <script>
+    // 1. Handle Login Submission
+    document.getElementById('login-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevents page reload
+      const usernameInput = document.getElementById('username').value;
+      
+      alert(`Welcome back, ${
