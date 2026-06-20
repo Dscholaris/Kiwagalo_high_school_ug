@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Information Portal</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7f6;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+     legend{
+         padding:10px;
+         margin:10px;
+     }
+     fieldset{
+           padding:10px;
+           margin:10px;
+       }
+        /* Container Layout */
+        .container {
+            flex: 1;
+            max-width: 600px;
+            width: 90%;
+            margin: 40px auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px #000000;
+        }
+
+        h2 {
+            text-align: center;
+            color: #2c3e50;
+            margin-bottom: 25px;
+        }
+
+        /* Form Styling */
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #34495e;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #3498db;
+        }
+
+        .row {
+            display: flex;
+            gap: 15px;
+        }
+
+        .row .form-group {
+            flex: 1;
+        }
+
+        /* Button Styling */
+        .btn-submit {
+            width: 100%;
+            background-color:#4bb2e6;
+            color: white;
+            padding: 14px;
+            border: none;
+            border-radius: 4px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .btn-submit:hover {
+            background-color: #27ae60;
+        }
+
+        /* Footer Styling */
+        footer {
+            background-color:#1873a1;
+            color: #ecf0f1;
+            text-align: center;
+            padding: 20px 10px;
+            margin-top: auto;
+            font-size: 14px;
+        }
+
+        footer a {
+            color: #3498db;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-contacts {
+            margin-top: 8px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 480px) {
+            .row {
+                flex-direction: column;
+                gap: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Employee Information Form</h2>
+        <fieldset>
+            <legend>Personal Information</legend>
+        <form id="employeeForm">
+            <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" required placeholder="Your name">
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" required placeholder="insert your email">
+                </div>
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" required
+                    placeholder="07xx-xxx-xxx">
+                    </fieldset>
+         
+                  <fieldset>
+                    <legend>Work Information</legend>
+                  <label for="startDate">Start of training date</label>
+                    <input type="date" id="startDate" required>
+                    
+                    <label for="startDate">Start of work date</label>
+                    <input type="date" id="startDate" required>
+                    <label for="department"> Which department would you like to work under</label>
+                    <input type="text" id="department" required>
+               </fieldset> 
+             <fieldset>
+                  <legend>Previous Work Information</legend>
+                <br/>
+                <input type="text" id="jobTitle" required placeholder=
+                "Organisation">
+                <br/>
+                <br/>
+                <input type="text" id="jobTitle" required placeholder=
+                "Position of employment">
+                <br/>
+                <br/>
+                <input type="text" id="jobTitle" required placeholder=
+                "Referee">
+                </fieldset>
+
+            <button type="submit" class="btn-submit">Submit Information</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 Kiwagalo High School, Sironko, Mbale. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        document.getElementById('employeeForm').addEventListener('submit', function(event) {
+            // Prevent the default form submission page refresh
+            event.preventDefault();
+
+            // Gather form data
+            const employeeData = {
+                fullName: document.getElementById('fullName').value,
+                email: document.getElementById('email').value,
+                phone: document.getElementById('phone').value,
+                startDate: document.getElementById('startDate').value,
+                department: document.getElementById('department').value,
+                jobTitle: document.getElementById('jobTitle').value
+            };
+
+            // Log data to console (You can replace this with an API call/fetch request)
+            console.log('Employee Data Submitted Successfully:', employeeData);
+
+            // Alert the user
+            alert(`Thank you! Information for ${employeeData.fullName} has been submitted.`);
+
+            // Reset the form fields
+            document.getElementById('employeeForm').reset();
+        });
+    </script>
+</body>
+</html>
